@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "supabase:sync": "supabase gen types typescript --schema 'e-trike' --project-id quqcixqgldbatmhytmam > database.types.ts"
+    "supabase:sync": "supabase gen types typescript --schema \"e-trike\" --project-id quqcixqgldbatmhytmam > database.types.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

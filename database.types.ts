@@ -12,6 +12,70 @@ export type Database = {
   __InternalSupabase: {
     PostgrestVersion: "14.5"
   }
+  "e-trike": {
+    Tables: {
+      enroute: {
+        Row: {
+          created_at: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      rides: {
+        Row: {
+          created_at: string
+          id: string
+          operator: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          operator?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          operator?: string | null
+        }
+        Relationships: []
+      }
+      transactions: {
+        Row: {
+          created_at: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+        }
+        Relationships: []
+      }
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      [_ in never]: never
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
+    }
+  }
 }
 
 type DatabaseWithoutInternals = Omit<Database, "__InternalSupabase">
@@ -131,4 +195,8 @@ export type CompositeTypes<
     ? DefaultSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
     : never
 
-export const Constants = {} as const
+export const Constants = {
+  "e-trike": {
+    Enums: {},
+  },
+} as const
