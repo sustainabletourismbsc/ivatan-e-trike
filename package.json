@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "supabase:sync": "supabase gen types typescript --schema \"e-trike\" --project-id quqcixqgldbatmhytmam > database.types.ts"
+    "supabase:types": "npx supabase gen types typescript --project-id \"quqcixqgldbatmhytmam\" --schema \"public,e-trike\" >  database.types.ts",
+    "supabase:enums": "npx tsx scripts/generate-db-enums.ts",
+    "supabase:sync": "npm run supabase:types && npm run supabase:enums",
+    "env:types": "tsx scripts/generate-env-types.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
@@ -41,6 +44,7 @@
     "eslint-config-next": "16.3.2",
     "supabase": "^2.115.0",
     "tailwindcss": "^4",
+    "tsx": "^4.23.12",
     "typescript": "^5"
   }
 }
